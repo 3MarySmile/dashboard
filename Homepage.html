@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="static/css/Home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <!--__________HEADER____________-->
+    <div class="Logo">
+        <img src="static/img/logo2.png" class="imglogoTop" alt="">
+        <h1>3 MARY'S SMILE</h1>
+        <p>DENTAL CLINIC</p>
+
+        <div class="submitbtn">
+            <input type="submit" value="Logout" onclick="logout()">
+        </div>
+
+        <img src="./static/img/logout.png" onclick="logout()" class="img-fluid img_Lougout" />
+    </div>
+
+    <!--__________BODY____________-->
+    <div class="container" style="max-width:1309px;">
+        <h1 class="paDashboard">Dashboard</h1>
+        <div class="row">
+        
+            <div class="col-lg-4 col-12" class="datetime">
+                <h4 class="paTDate" >Time & Date</h4>
+                <div class="timeClients">
+                    <div>
+                        <div class="time">
+                            <span id="hour">00</span>:
+                            <span id="minute">00</span>:
+                            <span id="seconds">00</span>
+                            <span id="period">AM</span>
+                        </div>
+                        <div class="date">
+                            <span id="dayname">Day</span>,
+                            <span id="month">Month</span>
+                            <span id="daynum">00</span>,
+                            <span id="Year">Year</span>
+                        </div>
+                    </div>
+                    
+                    <div class="clientDivCount">
+                        <div class="clientsDNumb">
+                            <p class="paCl">Clients</p>
+                            <p class="numbClient numbClient-font">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-12">
+                <!--___Client Schedule___-->
+                <div class="paClientServ paClientServ-font">
+                    Client Schedule Service
+                </div>
+
+                <div class="infos">
+                    <div style="display: none;">
+                        <p class="paMonthsS">Sep 2022</p>
+                        <div id="ZoominImg">
+                            <div class="client_child">
+                                <div class="clientImg">
+                                    <div class="imgDiv"></div>
+                                </div>
+                                <div>
+                                    <p class="paName">Jimboyd Domingo</p>
+                                    <p class="painfo">Oct 11 2022</p>
+                                    <p class="painfo">12:00 AM</p>
+                                </div>
+                            </div>
+                            <div class="serviceP">
+                                Cleaning
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex;justify-content: center;">
+                    <span class="showMore" onclick="showMore()">Show more</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./static/js/dtime.js"></script>
+    <script src="./contact_server/dashboard.js"></script>
+   <script src = "./static/js/logout.js"></script>
+</body>
+</html>
