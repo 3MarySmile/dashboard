@@ -1,6 +1,6 @@
 window.onload = () => {
     var http = new XMLHttpRequest();
-    http.open('POST', 'https://three-mery-smile-node.onrender.com/checkingToken', true);
+    http.open('POST', 'https://threemarysmiledentalclinicapi.onrender.com/checkingToken', true);
     http.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
     http.send(JSON.stringify({ auth: localStorage.getItem('OOS_s') }))
     http.onload = async() => {
@@ -18,7 +18,7 @@ function LoginBtn(){
     var pass = document.getElementById("pass");
 
     var http = new XMLHttpRequest();
-    http.open('POST', 'https://three-mery-smile-node.onrender.com/login', true);
+    http.open('POST', 'https://threemarysmiledentalclinicapi.onrender.com/login', true);
     http.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
     http.send(JSON.stringify({ username: name.value, password: pass.value }))
     http.onload = async() => {
@@ -33,6 +33,5 @@ function LoginBtn(){
 
     }; 
 }
-
 
 

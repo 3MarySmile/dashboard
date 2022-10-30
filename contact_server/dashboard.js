@@ -11,7 +11,7 @@ window.onload = () => {
     
     //Security_______________________________________________________
     var https = new XMLHttpRequest();
-    https.open('POST', 'https://three-mery-smile-node.onrender.com/checkingToken', true);
+    https.open('POST', 'https://threemarysmiledentalclinicapi.onrender.com/checkingToken', true);
     https.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
     https.send(JSON.stringify({ auth: localStorage.getItem('OOS_s') }))
     https.onload = async() => {
@@ -19,7 +19,7 @@ window.onload = () => {
       if(c.response === 'success'){
         //getting the ACCEPTED APPOINTMENT_________________________________
         var http = new XMLHttpRequest();
-        http.open('POST', 'https://three-mery-smile-node.onrender.com/get_appointment');
+        http.open('POST', 'https://threemarysmiledentalclinicapi.onrender.com/get_appointment');
         http.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
         http.send(JSON.stringify({ auth: localStorage.getItem('OOS_s') }));
         http.onload = async() => {
