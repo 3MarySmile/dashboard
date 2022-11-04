@@ -45,7 +45,7 @@ window.onload = () => {
                 }
                 
                 let condition = false;
-                for(let counts = (count+1);counts < data;counts++){
+                for(let counts = (count+1);counts < data.length;counts++){
                     if(data[counts].length > 0){
                         condition = true;
                     }
@@ -160,14 +160,16 @@ async function converted_append(data, numb){
 
 function showMore(){
 
+    let arr_date = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
     if(!showmore_condition){
         for(let count = (count_data+1);count < data_handle.length;count++){
             if(data_handle[count].length > 0){
-    
                 let condition = false;
-                for(let checking = (count+1);checking < data_handle.length;checking++){
+                let handleMonth = 0;
+                for(let checking = (count);checking < data_handle.length;checking++){
                     if(data_handle[checking].length > 0){
                         condition = true;
+                        handleMonth = checking;
                     }
     
                     if(checking+1 == data_handle.length){
@@ -175,13 +177,18 @@ function showMore(){
                             showmore_condition = true;
                             doc_showMore.style.display = "none";
                         }
+
+                        if(arr_date[checking] === 'Dec'){
+                            showmore_condition = true;
+                            doc_showMore.style.display = "none";
+                        }
+
                         converted_append(data_handle, count);
                     }
                 }
                 break;
             }
         }
-    }else{
     }
 
 
