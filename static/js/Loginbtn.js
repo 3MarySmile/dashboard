@@ -24,8 +24,8 @@ function LoginBtn(){
     http.onload = async() => {
         let c = JSON.parse(http.response);
         if(c.response === 'success'){
-
           localStorage.setItem('OOS_s', c.token)
+          alert("Successfully login.");
           window.location.href = 'Homepage.html';
         }else{
           alert('Username or Password is not completed or incorrect.');
